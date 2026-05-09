@@ -62,3 +62,24 @@ add_action('template_redirect', function () {
     wp_safe_redirect(mysite_login_url(wc_get_checkout_url()));
     exit;
 });
+
+/**
+ * Render the login prompt partial in the footer of WooCommerce-managed
+ * pages so the JS module has markup to surface. Skipped when logged in,
+ * and skipped on non-Woo pages where Add-to-Cart can't appear.
+ */
+add_action('wp_footer', function () {
+    if (is_user_logged_in()) {
+        return;
+    }
+    if (!function_exists('is_woocommerce')) {
+        return;
+    }
+    if (!is_woocommerce() && !is_cart()) {
+        return;
+    }
+
+    get_template_part('template-parts/global/login-prompt', null, [
+        'login_url' => mysite_login_url(),
+    ]);
+});
