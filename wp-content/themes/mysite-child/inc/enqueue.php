@@ -53,4 +53,14 @@ add_action('wp_enqueue_scripts', function () {
             filemtime($theme_dir . $rel)
         );
     }
+
+    if (function_exists('is_checkout') && is_checkout()) {
+        $rel = '/assets/css/pages/checkout.css';
+        wp_enqueue_style(
+            'mysite-checkout',
+            $theme_uri . $rel,
+            ['mysite-main'],
+            filemtime($theme_dir . $rel)
+        );
+    }
 }, 21);

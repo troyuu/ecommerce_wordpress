@@ -1,0 +1,112 @@
+/* Checkout page polish — works against WooCommerce's default markup. */
+
+.woocommerce-checkout .woocommerce {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+}
+
+.woocommerce-checkout h3 {
+  font-size: 1.125rem;
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.woocommerce-checkout .form-row {
+  margin-bottom: var(--space-3);
+}
+
+.woocommerce-checkout .form-row label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  color: var(--color-text);
+}
+
+.woocommerce-checkout .form-row input[type="text"],
+.woocommerce-checkout .form-row input[type="email"],
+.woocommerce-checkout .form-row input[type="tel"],
+.woocommerce-checkout .form-row input[type="password"],
+.woocommerce-checkout .form-row select,
+.woocommerce-checkout .form-row textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font: inherit;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 150ms ease-out;
+}
+
+.woocommerce-checkout .form-row input:focus-visible,
+.woocommerce-checkout .form-row select:focus-visible,
+.woocommerce-checkout .form-row textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+.woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-4);
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.woocommerce-checkout-review-order-table thead th {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.woocommerce-checkout #payment {
+  background: color-mix(in srgb, var(--color-border) 30%, transparent);
+  padding: var(--space-4);
+  border-radius: 8px;
+  margin-top: var(--space-4);
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li {
+  margin-bottom: var(--space-2);
+}
+
+.woocommerce-checkout .place-order .button,
+.woocommerce-checkout #place_order {
+  display: inline-block;
+  width: 100%;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-3) var(--space-4);
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter 150ms ease-out;
+}
+
+.woocommerce-checkout .place-order .button:hover,
+.woocommerce-checkout #place_order:hover,
+.woocommerce-checkout .place-order .button:focus-visible,
+.woocommerce-checkout #place_order:focus-visible {
+  filter: brightness(1.1);
+}
