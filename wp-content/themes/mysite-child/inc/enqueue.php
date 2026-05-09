@@ -63,4 +63,14 @@ add_action('wp_enqueue_scripts', function () {
             filemtime($theme_dir . $rel)
         );
     }
+
+    if (function_exists('is_account_page') && is_account_page()) {
+        $rel = '/assets/css/pages/myaccount.css';
+        wp_enqueue_style(
+            'mysite-myaccount',
+            $theme_uri . $rel,
+            ['mysite-main'],
+            filemtime($theme_dir . $rel)
+        );
+    }
 }, 21);

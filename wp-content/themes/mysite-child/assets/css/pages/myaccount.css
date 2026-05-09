@@ -1,0 +1,186 @@
+/* My Account polish — works against WooCommerce's default markup. */
+
+.woocommerce-account .woocommerce {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+}
+
+/* Logged-out landing: login + register side by side on wider screens. */
+.woocommerce-account .u-columns,
+.woocommerce-account .col2-set {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .woocommerce-account:not(.logged-in) .u-columns,
+  .woocommerce-account:not(.logged-in) .col2-set {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Login + register form shells. */
+.woocommerce-form-login,
+.woocommerce-form-register {
+  background: color-mix(in srgb, var(--color-border) 30%, transparent);
+  padding: var(--space-5);
+  border-radius: 8px;
+}
+
+.woocommerce-account h2,
+.woocommerce-form-login h2,
+.woocommerce-form-register h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-3);
+}
+
+/* Form rows — same field styling as checkout for visual consistency. */
+.woocommerce-account .form-row {
+  margin-bottom: var(--space-3);
+}
+
+.woocommerce-account .form-row label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  color: var(--color-text);
+}
+
+.woocommerce-account .form-row input[type="text"],
+.woocommerce-account .form-row input[type="email"],
+.woocommerce-account .form-row input[type="tel"],
+.woocommerce-account .form-row input[type="password"],
+.woocommerce-account .form-row select,
+.woocommerce-account .form-row textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font: inherit;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+.woocommerce-account .form-row input:focus-visible,
+.woocommerce-account .form-row select:focus-visible,
+.woocommerce-account .form-row textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+/* Buttons — login submit, register submit, generic .button in account content. */
+.woocommerce-form-login__submit,
+.woocommerce-form-register__submit,
+.woocommerce-account .woocommerce-MyAccount-content .button,
+.woocommerce-account .woocommerce-Button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 150ms ease-out;
+}
+
+.woocommerce-form-login__submit:hover,
+.woocommerce-form-register__submit:hover,
+.woocommerce-account .woocommerce-MyAccount-content .button:hover,
+.woocommerce-account .woocommerce-Button:hover {
+  filter: brightness(1.1);
+}
+
+/* Dashboard sidebar nav. */
+.woocommerce-MyAccount-navigation {
+  margin-bottom: var(--space-4);
+}
+
+.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.woocommerce-MyAccount-navigation li a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.woocommerce-MyAccount-navigation li a:hover,
+.woocommerce-MyAccount-navigation li.is-active a {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .woocommerce-account.logged-in .u-columns {
+    grid-template-columns: 220px 1fr;
+  }
+  .woocommerce-MyAccount-navigation {
+    margin-bottom: 0;
+  }
+}
+
+/* Orders table. */
+.woocommerce-MyAccount-orders {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.woocommerce-MyAccount-orders th {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.woocommerce-MyAccount-orders td {
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+.woocommerce-MyAccount-orders .button {
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.875rem;
+}
+
+/* Address blocks. */
+.woocommerce-Address {
+  background: color-mix(in srgb, var(--color-border) 30%, transparent);
+  padding: var(--space-4);
+  border-radius: 8px;
+}
+
+.woocommerce-Address-title h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+}
+
+.woocommerce-Address address {
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--color-muted);
+  margin: 0;
+}
