@@ -13,3 +13,4 @@ require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/woocommerce.php';
 require_once get_stylesheet_directory() . '/inc/customizations.php';
 require_once get_stylesheet_directory() . '/inc/auth-gate.php';
+require_once get_stylesheet_directory() . '/inc/navigation.php';
