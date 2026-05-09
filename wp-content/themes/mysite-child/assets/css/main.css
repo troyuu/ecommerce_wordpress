@@ -14,3 +14,4 @@
 @import url("./base/typography.css") layer(base);
 
 @import url("./components/login-prompt.css") layer(components);
+@import url("./components/primary-nav.css") layer(components);
