@@ -1,0 +1,103 @@
+/* Cart page polish — works against WooCommerce's default markup. */
+
+.woocommerce-cart .woocommerce {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+}
+
+.woocommerce-cart .shop_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-5);
+}
+
+.woocommerce-cart .shop_table th {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.woocommerce-cart .shop_table td {
+  padding: var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.woocommerce-cart .product-thumbnail img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.woocommerce-cart .product-name a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 150ms ease-out;
+}
+
+.woocommerce-cart .product-name a:hover,
+.woocommerce-cart .product-name a:focus-visible {
+  color: var(--color-accent);
+}
+
+.woocommerce-cart .product-price,
+.woocommerce-cart .product-subtotal {
+  font-variant-numeric: tabular-nums;
+}
+
+.woocommerce-cart .product-remove a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.woocommerce-cart .product-remove a:hover {
+  color: var(--color-accent);
+}
+
+.woocommerce-cart .cart_totals {
+  background: color-mix(in srgb, var(--color-border) 30%, transparent);
+  padding: var(--space-5);
+  border-radius: 8px;
+  max-width: 28rem;
+  margin-left: auto;
+}
+
+.woocommerce-cart .cart_totals h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+  font-size: 1.25rem;
+}
+
+.woocommerce-cart .cart_totals .shop_table th,
+.woocommerce-cart .cart_totals .shop_table td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.woocommerce-cart .checkout-button {
+  display: inline-block;
+  width: 100%;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  margin-top: var(--space-3);
+  transition: filter 150ms ease-out;
+}
+
+.woocommerce-cart .checkout-button:hover,
+.woocommerce-cart .checkout-button:focus-visible {
+  filter: brightness(1.1);
+}
