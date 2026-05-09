@@ -1,0 +1,21 @@
+# Git scope: limited to the mysite-child theme.
+# Everything else (WP core, plugins, uploads, db) is managed by WordPress
+# and must not be in version control.
+
+# Ignore everything by default
+/*
+
+# Allow root meta files
+!.gitignore
+!.gitattributes
+
+# Allow path down to the child theme
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/mysite-child/
+
+# AI-agent context — kept on disk locally, never in the repo.
+wp-content/themes/mysite-child/CLAUDE.md
+wp-content/themes/mysite-child/.claude/
