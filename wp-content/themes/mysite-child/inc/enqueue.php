@@ -73,4 +73,20 @@ add_action('wp_enqueue_scripts', function () {
             filemtime($theme_dir . $rel)
         );
     }
+
+    $is_blog = is_singular('post')
+        || is_home()
+        || is_category()
+        || is_tag()
+        || is_author()
+        || is_date();
+    if ($is_blog) {
+        $rel = '/assets/css/pages/blog.css';
+        wp_enqueue_style(
+            'mysite-blog',
+            $theme_uri . $rel,
+            ['mysite-main'],
+            filemtime($theme_dir . $rel)
+        );
+    }
 }, 21);
