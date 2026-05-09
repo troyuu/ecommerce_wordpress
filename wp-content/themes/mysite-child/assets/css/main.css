@@ -1,0 +1,14 @@
+/*
+ * mysite-child main stylesheet.
+ *
+ * ITCSS-lite layered architecture. Layer order defines specificity:
+ *   base < components < pages
+ * Page-specific stylesheets are enqueued conditionally per template
+ * by inc/enqueue.php.
+ */
+
+@layer base, components, pages;
+
+@import url("./base/variables.css") layer(base);
+@import url("./base/reset.css") layer(base);
+@import url("./base/typography.css") layer(base);
