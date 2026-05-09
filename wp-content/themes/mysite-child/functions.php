@@ -11,3 +11,4 @@ defined('ABSPATH') || exit;
 require_once get_stylesheet_directory() . '/inc/setup.php';
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/woocommerce.php';
+require_once get_stylesheet_directory() . '/inc/customizations.php';
