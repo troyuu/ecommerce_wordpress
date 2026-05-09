@@ -21,4 +21,8 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary' => __('Primary Menu', 'mysite-child'),
     ]);
+
+    // Product imagery — square crop for grid cards, uncropped for hero.
+    add_image_size('mysite-product-card', 600, 600, true);
+    add_image_size('mysite-product-hero', 1200, 1200, false);
 });
