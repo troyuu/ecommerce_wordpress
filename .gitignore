@@ -19,3 +19,6 @@ wp-content/themes/*
 # AI-agent context — kept on disk locally, never in the repo.
 wp-content/themes/mysite-child/CLAUDE.md
 wp-content/themes/mysite-child/.claude/
+
+# Keep local environment backups and credential files out of Git.
+.env.pre-*
